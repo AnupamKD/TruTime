@@ -15,14 +15,12 @@ public class AppTest extends BaseUI {
 	@BeforeTest
 	public void invokeBrowser() {
 		logger = report.createTest("Executing Test Cases");
-
 		tr.invokeBrowser();
 		reportPass("Browser is invoked");
 	}
 
 	@Test(priority = 1)
 	public void testCases() throws Exception {
-
 		tr.openURL();
 		tr.login();
 		tr.getData();

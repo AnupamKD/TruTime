@@ -21,7 +21,8 @@ public class TruTime extends BaseUI {
 	By trutime = By.xpath("//span[contains(text(),'https://onecognizant.cognizant.com/?GlobalAppId=21')]");
 	By date = By.xpath("//div[@class='dayDetail ng-scope']/div[1]");
 	By OTP = By.xpath("//*[@id='idRichContext_DisplaySign']");
-
+	
+	//This method performs Login of the user and fetches Account Holder name  
 	public void login() {
 		logger = report.createTest("Login into Becognizant.");
 		try {
@@ -34,7 +35,7 @@ public class TruTime extends BaseUI {
 			wait(20, OTP);
 			String OTP_Code = driver.findElement(OTP).getText();
 			System.out.println("The OTP : " + OTP_Code);
-			Thread.sleep(1000);
+			//Thread.sleep(1000);
 			reportPass("Email and Password are verified sucessfully");
 			wait(120, yes);
 
@@ -55,7 +56,8 @@ public class TruTime extends BaseUI {
 			reportFail(e.getMessage());
 		}
 	}
-
+	
+	//This method navigates to TruTime page and fetches all dates
 	public void getData() {
 		logger = report.createTest("Obtain the Week from trutime.");
 		try {
